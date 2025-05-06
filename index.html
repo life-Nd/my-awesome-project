@@ -1,0 +1,508 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raffaello - AI Web Builder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+      body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #1e1e30;
+          color: #fff;
+          overflow-x: hidden;
+      }
+      .hero {
+          background: linear-gradient(135deg, #1e1e30 0%, #342ead 100%);
+          padding: 12rem 0;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+      }
+      .hero::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: url('https://images.pexels.com/photos/373895/pexels-photo-373895.jpeg?auto=compress&amp;amp;amp;amp;cs=tinysrgb&amp;amp;amp;amp;w=1260&amp;amp;amp;amp;h=750&amp;amp;amp;amp;dpr=2') center/cover no-repeat;
+          opacity: 0.3;
+          z-index: 0;
+      }
+      .hero &amp;amp;amp;gt; * {
+          z-index: 1;
+          position: relative;
+      }
+      .cta-button {
+          background-color: #ffc107;
+          color: #1e1e30;
+          padding: 1rem 2rem;
+          border-radius: 0.5rem;
+          display: inline-block;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .cta-button:hover {
+          background-color: #e0a800;
+          transform: translateY(-2px);
+      }
+      .features {
+          padding: 8rem 0;
+          text-align: center;
+          background-color: #2c2c44;
+      }
+      .feature-item {
+          margin-bottom: 4rem;
+          transition: transform 0.3s ease;
+      }
+      .feature-item:hover {
+          transform: translateY(-5px);
+      }
+      .interactive-demo {
+          padding: 8rem 0;
+          text-align: center;
+          background: linear-gradient(135deg, #2c2c44 0%, #1e1e30 100%);
+      }
+      .testimonials {
+          padding: 8rem 0;
+          text-align: center;
+      }
+      .testimonial-item {
+          margin-bottom: 4rem;
+          background-color: #2c2c44;
+          padding: 2rem;
+          border-radius: 0.5rem;
+      }
+      .pricing-plans {
+          padding: 8rem 0;
+          text-align: center;
+          background-color: #2c2c44;
+      }
+      .pricing-plan {
+          background-color: #1e1e30;
+          padding: 3rem;
+          border-radius: 0.5rem;
+          margin-bottom: 2rem;
+          transition: transform 0.3s ease;
+      }
+      .pricing-plan:hover {
+          transform: translateY(-5px);
+      }
+      .about {
+          padding: 8rem 0;
+          text-align: center;
+          background: linear-gradient(135deg, #1e1e30 0%, #2c2c44 100%);
+      }
+      .faq {
+          padding: 8rem 0;
+          text-align: center;
+      }
+      .faq-item {
+          margin-bottom: 2rem;
+          background-color: #2c2c44;
+          padding: 2rem;
+          border-radius: 0.5rem;
+      }
+      .footer {
+          background-color: #151522;
+          padding: 4rem 0;
+          text-align: center;
+      }
+      .parallax {
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
+      .comparison-chart {
+          padding: 8rem 0;
+          text-align: center;
+          background-color: #2c2c44;
+      }
+      .success-stories {
+          padding: 8rem 0;
+          text-align: center;
+      }
+      .integrations {
+          padding: 8rem 0;
+          text-align: center;
+          background-color: #2c2c44;
+      }
+      .media-mentions {
+          padding: 8rem 0;
+          text-align: center;
+      }
+      .data-visualization {
+          padding: 8rem 0;
+          text-align: center;
+          background: linear-gradient(135deg, #2c2c44 0%, #1e1e30 100%);
+      }
+      .final-cta {
+          padding: 8rem 0;
+          text-align: center;
+      }
+      .glassmorphism {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(7.7px);
+          -webkit-backdrop-filter: blur(7.7px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-transparent py-4 fixed top-0 w-full z-50">
+      <div class="container mx-auto px-4">
+        <nav class="flex items-center justify-between">
+          <a href="#" class="text-2xl font-bold">Raffaello</a>
+          <div class="space-x-6">
+            <a href="#" class="hover:text-gray-300">Features</a>
+            <a href="#" class="hover:text-gray-300">Pricing</a>
+            <a href="#" class="hover:text-gray-300">About</a>
+            <a href="#" class="hover:text-gray-300">Contact</a>
+            <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded transition duration-300">Get Started</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">
+          Build Stunning Websites Instantly with Raffaello ❤️
+        </h1>
+        <p class="text-lg mb-8 animate__animated animate__fadeInUp">
+          Create, Customize, Launch — All in Minutes
+        </p>
+        <a href="#" class="cta-button animate__animated animate__pulse animate__infinite">Get Started Free</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 animate__animated animate__fadeIn">
+          Key Features
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="feature-item animate__animated animate__fadeInLeft glassmorphism p-6 rounded-lg">
+            <img src="https://images.pexels.com/photos/259924/pexels-photo-259924.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="AI" class="mx-auto mb-4 rounded-full shadow-md" style="width: 100px; height: 100px; object-fit: cover;">
+            <h3 class="text-xl font-semibold">AI-Powered Design</h3>
+            <p>
+              Intelligent suggestions to create beautiful websites effortlessly.
+            </p>
+          </div>
+          <div class="feature-item animate__animated animate__fadeIn glassmorphism p-6 rounded-lg">
+            <img src="https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Customization" class="mx-auto mb-4 rounded-full shadow-md" style="width: 100px; height: 100px; object-fit: cover;">
+            <h3 class="text-xl font-semibold">Full Customization</h3>
+            <p>Tailor every detail to match your brand perfectly.</p>
+          </div>
+          <div class="feature-item animate__animated animate__fadeInRight glassmorphism p-6 rounded-lg">
+            <img src="https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Speed" class="mx-auto mb-4 rounded-full shadow-md" style="width: 100px; height: 100px; object-fit: cover;">
+            <h3 class="text-xl font-semibold">Lightning Fast</h3>
+            <p>Launch your website in minutes with optimized performance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="interactive-demo parallax" style="background-image: url('https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2');">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 animate__animated animate__fadeIn">
+          Interactive Demo
+        </h2>
+        <p class="mb-8 animate__animated animate__fadeInUp">
+          See Raffaello in action. Explore the intuitive interface and powerful
+          features.
+        </p>
+        <video src="https://player.vimeo.com/external/444092449.sd.mp4?s=9a593c12e358a8913253e39e749ca8091993404f&amp;profile_id=164&amp;oauth2_token_id=57447761" controls="controls" class="mx-auto rounded-lg shadow-lg" style="max-width: 800px;"></video>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 animate__animated animate__fadeIn">
+          What Our Users Say
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="testimonial-item animate__animated animate__fadeInLeft">
+            <p class="italic">
+              "Raffaello has transformed the way I build websites. It's
+              incredibly easy to use and the AI suggestions are spot on!"
+            </p>
+            <p class="mt-2">- John Doe, CEO</p>
+          </div>
+          <div class="testimonial-item animate__animated animate__fadeInRight">
+            <p class="italic">
+              "I was able to create a professional website in just a few hours.
+              The customization options are amazing!"
+            </p>
+            <p class="mt-2">- Jane Smith, Designer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-plans">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 animate__animated animate__fadeIn">
+          Pricing Plans
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="pricing-plan animate__animated animate__fadeInLeft">
+            <h3 class="text-xl font-semibold mb-4">Basic</h3>
+            <p class="text-4xl font-bold">$19/month</p>
+            <p class="mb-4">Limited features</p>
+            <a href="#" class="cta-button">Get Started</a>
+          </div>
+          <div class="pricing-plan animate__animated animate__fadeIn">
+            <h3 class="text-xl font-semibold mb-4">Pro</h3>
+            <p class="text-4xl font-bold">$49/month</p>
+            <p class="mb-4">All basic features + more</p>
+            <a href="#" class="cta-button">Get Started</a>
+          </div>
+          <div class="pricing-plan animate__animated animate__fadeInRight">
+            <h3 class="text-xl font-semibold mb-4">Enterprise</h3>
+            <p class="text-4xl font-bold">Contact Us</p>
+            <p class="mb-4">Custom solutions</p>
+            <a href="#" class="cta-button">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 animate__animated animate__fadeIn">
+          About Raffaello
+        </h2>
+        <p class="mb-8 animate__animated animate__fadeInUp">
+          Our mission is to democratize web development through AI. We believe
+          everyone should have the power to create stunning websites without
+          coding.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 animate__animated animate__fadeIn">
+          Frequently Asked Questions
+        </h2>
+        <div class="faq-item animate__animated animate__fadeInUp">
+          <h3 class="text-xl font-semibold">What is Raffaello?</h3>
+          <p>
+            Raffaello is an AI-powered web builder that helps you create
+            stunning websites in minutes.
+          </p>
+        </div>
+        <div class="faq-item animate__animated animate__fadeInUp">
+          <h3 class="text-xl font-semibold">Do I need coding experience?</h3>
+          <p>No, Raffaello is designed for users of all skill levels.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="website-examples">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">
+          Websites Created with Raffaello
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="rounded-lg shadow-md overflow-hidden">
+            <img src="https://images.pexels.com/photos/106344/pexels-photo-106344.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Website Example 1" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">E-commerce Store</h3>
+              <p class="text-gray-300">
+                A fully functional online store with a seamless shopping
+                experience.
+              </p>
+              <a href="#" class="text-purple-400 hover:text-purple-300">View Live Site</a>
+            </div>
+          </div>
+          <div class="rounded-lg shadow-md overflow-hidden">
+            <img src="https://images.pexels.com/photos/392018/pexels-photo-392018.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Website Example 2" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
+              <p class="text-gray-300">
+                Showcase your work with a stunning and responsive portfolio.
+              </p>
+              <a href="#" class="text-purple-400 hover:text-purple-300">View Live Site</a>
+            </div>
+          </div>
+          <div class="rounded-lg shadow-md overflow-hidden">
+            <img src="https://images.pexels.com/photos/7129618/pexels-photo-7129618.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Website Example 3" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Business Landing Page</h3>
+              <p class="text-gray-300">
+                Attract new customers with a professional and high-converting
+                landing page.
+              </p>
+              <a href="#" class="text-purple-400 hover:text-purple-300">View Live Site</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="success-stories">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 animate__animated animate__fadeIn">
+          Success Stories
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <img src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Success Story 1" class="rounded-lg shadow-md mb-4 animate__animated animate__fadeInLeft">
+            <p>
+              "Raffaello helped me increase my website traffic by 50% in just
+              one month!" - Sarah L.
+            </p>
+          </div>
+          <div>
+            <img src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Success Story 2" class="rounded-lg shadow-md mb-4 animate__animated animate__fadeInRight">
+            <p>
+              "I saved so much time and money using Raffaello. It's the best web
+              builder I've ever used!" - Mark T.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="integrations">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 animate__animated animate__fadeIn">
+          Integrations
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <img src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Integration 1" class="mx-auto animate__animated animate__fadeIn">
+          </div>
+          <div>
+            <img src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Integration 2" class="mx-auto animate__animated animate__fadeIn">
+          </div>
+          <div>
+            <img src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Integration 3" class="mx-auto animate__animated animate__fadeIn">
+          </div>
+          <div>
+            <img src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Integration 4" class="mx-auto animate__animated animate__fadeIn">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="media-mentions">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 animate__animated animate__fadeIn">
+          Media Mentions
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <img src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Media 1" class="mx-auto animate__animated animate__fadeIn">
+          </div>
+          <div>
+            <img src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Media 2" class="mx-auto animate__animated animate__fadeIn">
+          </div>
+          <div>
+            <img src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Media 3" class="mx-auto animate__animated animate__fadeIn">
+          </div>
+          <div>
+            <img src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Media 4" class="mx-auto animate__animated animate__fadeIn">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="data-visualization">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 animate__animated animate__fadeIn">
+          User Growth
+        </h2>
+        <canvas id="userGrowthChart" width="400" height="200"></canvas>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8 animate__animated animate__fadeIn">
+          Ready to Get Started?
+        </h2>
+        <a href="#" class="cta-button">Start Your Free Trial</a>
+      </div>
+    </section>
+
+    <footer class="footer bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">About Raffaello</h3>
+            <p>
+              Revolutionizing web development with AI. Create stunning websites
+              effortlessly.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+            <p>123 AI Innovation Street</p>
+            <p>Tech City, State 12345</p>
+            <p>Email: info@raffaello.ai</p>
+            <div class="flex space-x-4 mt-4">
+              <a href="#" class="hover:text-gray-300 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="hover:text-gray-300 transition duration-300"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="hover:text-gray-300 transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="hover:text-gray-300 transition duration-300"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">
+              Subscribe to Our Newsletter
+            </h3>
+            <p>Stay updated with the latest news and features.</p>
+            <form class="mt-4">
+              <input type="email" placeholder="Your Email" class="bg-gray-800 text-white p-2 rounded-md w-full mb-2">
+              <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-md transition duration-300 w-full">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <hr class="my-8 border-gray-700">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <p>© 2024 Raffaello. All rights reserved.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-gray-300 transition duration-300">Privacy Policy</a>
+            <a href="#" class="hover:text-gray-300 transition duration-300">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const ctx = document.getElementById('userGrowthChart').getContext('2d');
+          const myChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                  datasets: [{
+                      label: 'New Users',
+                      data: [50, 75, 100, 150, 200, 250],
+                      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                      borderColor: 'rgba(75, 192, 192, 1)',
+                      borderWidth: 1
+                  }]
+              },
+              options: {
+                  scales: {
+                      y: {
+                          beginAtZero: true
+                      }
+                  }
+              }
+          });
+      });
+    </script>
+  
+
+</body></html>
